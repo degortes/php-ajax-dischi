@@ -5,13 +5,17 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="stylesheet" href="../dist/app.css">
         <meta charset="utf-8">
-        <title></title>
+        <title>Platlist - ECMA</title>
+        <script src="../dist/app.js" charset="utf-8"></script>
     </head>
 
 
     <body>
         <header>
             <h1>Platlist - ECMA</h1>
+            <select id="kind" class="" name="">
+                <option value="all">All</option>
+            </select>
         </header>
         <main>
             <div class="container">
@@ -34,6 +38,8 @@
                 <span>{{ year }}</span>
             </div>
         </script>
-        <script src="../dist/app.js" charset="utf-8"></script>
+        <script id="options" type="text/x-handlebars-template">
+            <option value="{{ value }}"> {{ value }}</option>
+        </script>
     </body>
 </html>

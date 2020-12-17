@@ -4,7 +4,7 @@
     <head>
         <link rel="stylesheet" href="../dist/app.css">
         <meta charset='utf-8'>
-        <title>Snack3</title>
+        <title>Platlist - PHP</title>
     </head>
     <body>
         <header>
