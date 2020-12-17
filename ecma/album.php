@@ -71,6 +71,16 @@ $dischi = [
         'year' => '1987'
     ]
 ];
+if (isset($_GET['genre']) && $_GET['genre'] != 'all') {
+    $genre = $_GET['genre'];
+    for ($i=0; $i < count($dischi) ; $i++) {
+        $disco = $dischi[$i];
+        if ($genre == $disco['genre']) {
+            $newplay[] = $disco;
+        }
+    }
+    $dischi = $newplay;
+}
 
 header('Content-Type: application/json');
 echo json_encode($dischi);
