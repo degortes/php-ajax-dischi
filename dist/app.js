@@ -135,27 +135,24 @@ $(document).ready(function () {
     var valuex = $('select')[0].value;
     $.ajax({
       url: 'album.php',
+      data: {
+        genre: valuex
+      },
       method: 'GET',
-      success: function success(reply2) {
+      success: function success(data) {
         $('.wrapper').empty();
 
-        for (var i = 0; i < reply2.length; i++) {
-          var data = reply2[i];
+        for (var i = 0; i < data.length; i++) {
+          var data2 = reply2[i];
           var obj = {
-            poster: data.poster,
-            title: data.title,
-            author: data.author,
-            year: data.year,
-            genre: data.genre
+            poster: data2.poster,
+            title: data2.title,
+            author: data2.author,
+            year: data2.year,
+            genre: data2.genre
           };
-
-          if (data.genre == valuex) {
-            var html = template(obj);
-            $('.wrapper').append(html);
-          } else if (valuex == 'all') {
-            var html = template(obj);
-            $('.wrapper').append(html);
-          }
+          var html = template(obj);
+          $('.wrapper').append(html);
         }
       },
       error: function error() {
