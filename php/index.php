@@ -29,7 +29,6 @@
         </main>
         <footer>
             <h2>copyright</h2>
-
         </footer>
     </body>
 </html>
