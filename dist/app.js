@@ -133,32 +133,37 @@ $(document).ready(function () {
   });
   $('#kind').change(function () {
     var valuex = $('select')[0].value;
-    $.ajax({
-      url: 'album.php',
-      data: {
-        genre: valuex
-      },
-      method: 'GET',
-      success: function success(data) {
-        $('.wrapper').empty();
+    console.log(valuex);
 
-        for (var i = 0; i < data.length; i++) {
-          var data2 = reply2[i];
-          var obj = {
-            poster: data2.poster,
-            title: data2.title,
-            author: data2.author,
-            year: data2.year,
-            genre: data2.genre
-          };
-          var html = template(obj);
-          $('.wrapper').append(html);
+    if (valuex != 'all') {
+      $('.wrapper').empty();
+      $.ajax({
+        url: 'album.php',
+        data: {
+          genre: valuex
+        },
+        method: 'GET',
+        success: function success(data) {
+          console.log(data);
+
+          for (var i = 0; i < data.length; i++) {
+            var data2 = data[i];
+            var obj = {
+              poster: data2.poster,
+              title: data2.title,
+              author: data2.author,
+              year: data2.year,
+              genre: data2.genre
+            };
+            var html = template(obj);
+            $('.wrapper').append(html);
+          }
+        },
+        error: function error() {
+          alert('orrore');
         }
-      },
-      error: function error() {
-        alert('orrore');
-      }
-    });
+      });
+    }
   });
 });
 
