@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+header {
+    line-height: 100px;
+    height: 100px;
+    text-align: center;
+    background-color: grey;
+    color: green;
+}
+main {
+    overflow: auto;
+    height: calc(100vh - 150px);
+}
+.container {
+    max-width: 1170px;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.card {
+    width: 200px;
+    margin: 20px;
+    padding: 10px;
+    color: white;
+    background-color: black;
+    img {
+        max-width: 100%;
+    }
+}
+
+h2, h3 {
+    font-size: 1em;
+}
+
+footer {
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
+    background-color: blue;
+}
