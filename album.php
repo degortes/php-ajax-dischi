@@ -71,6 +71,8 @@ $dischi = [
         'year' => '1987'
     ]
 ];
+}
+if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
 if (isset($_GET['genre']) && $_GET['genre'] != 'all') {
     $genre = $_GET['genre'];
     for ($i=0; $i < count($dischi) ; $i++) {
@@ -80,10 +82,11 @@ if (isset($_GET['genre']) && $_GET['genre'] != 'all') {
         }
     }
     $dischi = $newplay;
+
+    header('Content-Type: application/json');
+    echo json_encode($dischi);
 }
 
-header('Content-Type: application/json');
-echo json_encode($dischi);
 
 
 ?>

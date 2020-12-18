@@ -1,4 +1,4 @@
-<?php include 'album.php' ?>
+<?php include '../album.php' ?>
 <!DOCTYPE html>
 <html lang='en' dir='ltr'>
     <head>

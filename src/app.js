@@ -7,7 +7,7 @@ $(document).ready(function () {
     var templateopt = Handlebars.compile(sourceopt);
     var genres = [];
     $.ajax({
-        url: 'album.php',
+        url: '../album.php',
         method: 'GET',
         success: function(reply) {
             for (var i = 0; i < reply.length; i++) {
@@ -41,7 +41,7 @@ $(document).ready(function () {
         console.log(valuex);
         $('.wrapper').empty();
         $.ajax({
-            url: 'album.php',
+            url: '../album.php',
             data: {genre: valuex},
             method: 'GET',
             success: function(reply) {
