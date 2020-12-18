@@ -6,13 +6,20 @@
 }
 
 header {
-    // line-height: 100px;
-    // height: 100px;
-    text-align: center;
-    background-color: grey;
-    color: green;
+    line-height: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    color: #baffba;
+    border-bottom: 1px solid #baffba;
+    align-items: center;
+}
+select {
+    height: 30px;
 }
 main {
+    background-color: #bbb;
     overflow: auto;
     height: calc(100vh - 150px);
 }
@@ -36,14 +43,20 @@ main {
         max-width: 100%;
     }
 }
+h1 {
+    display: inline-block;
+}
 
 h2, h3 {
     font-size: 1em;
 }
 
 footer {
+    border-top: 1px solid #baffba;
+
     text-align: center;
     line-height: 50px;
     height: 50px;
-    background-color: blue;
+    background-color: black;
+    color: #baffba;
 }
