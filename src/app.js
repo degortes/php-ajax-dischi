@@ -6,9 +6,7 @@ $(document).ready(function () {
     if ($("#options").length) {
         var sourceopt = $("#options").html();
         var templateopt = Handlebars.compile(sourceopt);
-
         var genres = [];
-
         $.ajax({
             url: '../album.php',
             method: 'GET',
@@ -38,7 +36,6 @@ $(document).ready(function () {
                 alert('orrore');
             }
         });
-
     }
     $('#kind').change(function() {
         var valuex = $('select')[0].value;
@@ -66,8 +63,5 @@ $(document).ready(function () {
                 console.log(e);
             }
         });
-
     });
-
-
 });
